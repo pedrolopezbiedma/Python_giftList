@@ -1,27 +1,33 @@
-# Gift list main menu.
+### Imports ###
+from Classes.Persons import Persons
+from Classes.MenuAux import showLovelyWelcome, showMenuOptions, showLovelyGoodBye
 
-filledUsers = False
+### Class Instances
+personList = Persons()
+
+### Local variables ###
 menuOption = ''
-persons = []
-giftList = {}
+updatePersonList = ''
 
-print('**********************************************************************')
-print('********** Welcome to my wonderful Gift List python program **********')
-print('**********************************************************************')
+### Main Program ###
+showLovelyWelcome()
 
 while(menuOption != '0'):
-    print('----------------------------------------------------------------------')
-    print('| 1.- Let\'s see the involved persons :)                              |')
-    print('| 2.- Show me the entire Gift List                                   |')
-    print('| 3.- I want to add a gift to a person                               |')
-    print('| 4.- I just want to check the gifts for one person                  |')
-    print('| 0.- Leave me alone, I just want to leave!!!                        |')
-    print('----------------------------------------------------------------------')
+    showMenuOptions()
     menuOption = input('>>> Choose an option from the previous ones:')
  
     print('\n')
     if(menuOption == '1'):
-        print(f'You chose {menuOption}')
+        personList.printPersonList()
+        updatePersonList = ''
+
+        ### Giving the option to add persons.
+        while(updatePersonList != 'n'):
+            updatePersonList = input('Do you want to add another person? (y/n): ')
+            if(updatePersonList == 'y'):
+                person = input('Please type the name of the new person: ')
+                personList.addPerson(person)
+
     elif(menuOption == '2'):
         print(f'You chose {menuOption}')
     elif(menuOption == '3'):
@@ -29,8 +35,6 @@ while(menuOption != '0'):
     elif(menuOption == '4'):
         print(f'You chose {menuOption}')
     elif(menuOption == '0'):
-        print('**********************************************************************')
-        print('************ Thanks a lot for using my beloved program <3 ************')
-        print('**********************************************************************')
+        showLovelyGoodBye()
     else:
         print('Choose a correct option please.')
