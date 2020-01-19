@@ -4,11 +4,12 @@ def showLovelyWelcome():
     print('**********************************************************************')
 
 def showMenuOptions():
-    print('----------------------------------------------------------------------')
+    print('\n')
+    print('----------------------------- Menu -----------------------------------')
     print('| 1.- Let\'s see the involved persons :)                              |')
     print('| 2.- Show me the entire Gift List                                   |')
-    print('| 3.- I want to add a gift to a person                               |')
-    print('| 4.- I just want to check the gifts for one person                  |')
+    print('| 3.- I just want to check the gifts for one person                  |')
+    print('| 4.- I want to add a gift to a person                               |')
     print('| 0.- Leave me alone, I just want to leave!!!                        |')
     print('----------------------------------------------------------------------')
 

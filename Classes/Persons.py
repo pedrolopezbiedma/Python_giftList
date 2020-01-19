@@ -15,8 +15,9 @@ class Persons:
 
     def printPersonList(self):
         if(len(self.personList) > 0):
-            print('*** Person List ***')
+            print('**************************** Person List ***************************')
             for person in self.personList:
-                print(person)
+                print(f'| {person} ')
+            print('********************************************************************')
         else:
             print('There are no persons yet, you might want to add some ;)')
