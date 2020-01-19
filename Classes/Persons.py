@@ -6,8 +6,12 @@ class Persons:
     def addPerson(self, person):
         self.personList.append(person)
 
-    def checkPersonList(self):
-        return True;
+    def personFound(self, person):
+        for p in self.personList:
+            if(p == person):
+                return True;
+
+        return False;
 
     def printPersonList(self):
         if(len(self.personList) > 0):
