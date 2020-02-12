@@ -12,6 +12,12 @@ class GiftList:
             self.listDict[person] = []
             self.listDict[person].append(gift)
 
+    def printPersonsInGiftList(self):
+        print('**************************** Person List ***************************')
+        for person in list(self.listDict.keys()):
+            print(f'| {person} ')
+        print('********************************************************************')
+
     def printGiftList(self):
         print('--------------------------- Gifts List -----------------------------')
         for person in list(self.listDict.keys()):

@@ -2,6 +2,7 @@
 from Classes.Persons import Persons
 from Classes.GiftList import GiftList
 from Classes.MenuAux import showLovelyWelcome, showMenuOptions, showLovelyGoodBye, askMenuOption, askPerson, personNotFound, askGift, optionNotFound
+from DocumentHandler import initialLoad
 
 ### Class Instances
 personList = Persons()
@@ -12,17 +13,18 @@ menuOption = ''
 typedPerson = ''
 newGift = ''
 
-### Local functions ###
-
 ### Main Program ###
-showLovelyWelcome()
+initialLoad(giftList)
+
+# showLovelyWelcome()
+menuOption = '0'
 
 while(menuOption != '0'):
     showMenuOptions()
     menuOption = askMenuOption();
 
     if(menuOption == '1'):
-        personList.printPersonList()
+        giftList.printPersonsInGiftList()
         personList.askToUpdatePersonList()
 
     elif(menuOption == '2'):
@@ -49,6 +51,6 @@ while(menuOption != '0'):
 
     elif(menuOption == '0'):
         showLovelyGoodBye()
-        
+
     else:
         optionNotFound()
