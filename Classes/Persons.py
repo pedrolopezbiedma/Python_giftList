@@ -21,3 +21,15 @@ class Persons:
             print('********************************************************************')
         else:
             print('There are no persons yet, you might want to add some ;)')
+
+    def askToUpdatePersonList(self):
+        updatePersonList = ''
+
+        while(updatePersonList != 'n'):
+            updatePersonList = input('Do you want to add another person? (y/n): ')
+            print('\n')
+
+            if(updatePersonList == 'y'):
+                person = input('Please type the name of the new person: ')
+                self.addPerson(person)
+            self.printPersonList()
