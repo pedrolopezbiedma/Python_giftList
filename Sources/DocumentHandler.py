@@ -6,7 +6,7 @@ def initialLoad(giftList):
         for line in lines:
             print(line)
             nameObtained = False
-            if(line[0] == '#' || line[0] == '-'):
+            if(line[0] == '#' || line[0] == '-'):+
                 nameObtained = False
             elif(line[0] == '*' && nameObtained == False):
                 obtainNameFromLine(line)
