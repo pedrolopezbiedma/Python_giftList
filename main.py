@@ -1,11 +1,10 @@
 ### Imports ###
-from Classes.Persons import Persons
-from Classes.GiftList import GiftList
-from Classes.MenuAux import showLovelyWelcome, showMenuOptions, showLovelyGoodBye, askMenuOption, askPerson, personNotFound, askGift, optionNotFound
-from DocumentHandler import initialLoad
+from Sources.Persons import Persons
+from Sources.GiftList import GiftList
+from Sources.MenuAux import showLovelyWelcome, showMenuOptions, showLovelyGoodBye, askMenuOption, askPerson, askGift, optionNotFound
+from Sources.DocumentHandler import initialLoad
 
 ### Class Instances
-personList = Persons()
 giftList = GiftList()
 
 ### Local variables ###
@@ -14,40 +13,34 @@ typedPerson = ''
 newGift = ''
 
 ### Main Program ###
-initialLoad(giftList)
+#initialLoad(giftList)
 
-# showLovelyWelcome()
-menuOption = '0'
+showLovelyWelcome()
+#menuOption = '0'
 
 while(menuOption != '0'):
     showMenuOptions()
-    menuOption = askMenuOption();
+    menuOption = askMenuOption()
 
     if(menuOption == '1'):
         giftList.printPersonsInGiftList()
-        personList.askToUpdatePersonList()
+        giftList.askToUpdatePersonList()
 
     elif(menuOption == '2'):
         giftList.printGiftList()
 
     elif(menuOption == '3'):
-        personList.printPersonList()
+        giftList.printPersonsInGiftList()
+ 
         typedPerson = askPerson('checkPersonGifts')
-
-        if(personList.personFound(typedPerson)):
-            giftList.printPersonGifts(typedPerson)
-        else:
-            personNotFound()
+        giftList.printPersonGifts(typedPerson)
 
     elif(menuOption == '4'):
-        personList.printPersonList()
-        typedPerson = askPerson('addPersonGift')
+        giftList.printPersonsInGiftList()
 
-        if(personList.personFound(typedPerson)):
-            newGift = askGift()
-            giftList.addGift(typedPerson, newGift)
-        else:
-            personNotFound()
+        typedPerson = askPerson('addPersonGift')
+        newGift = askGift()
+        giftList.addGiftToPerson(typedPerson, newGift)
 
     elif(menuOption == '0'):
         showLovelyGoodBye()

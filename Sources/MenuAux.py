@@ -31,8 +31,9 @@ def askPerson(option):
 
     return typedPerson;
 
-def personNotFound():
-    print('That person is not in the list, you\'ll have add it first :( )')
+
+#def personNotFound():
+#    print('That person is not in the list, you\'ll have add it first :( )')
 
 def askGift():
     newGift = input('Please type the present you want to add: ')

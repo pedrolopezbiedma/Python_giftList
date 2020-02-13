@@ -1,4 +1,4 @@
-from Classes.GiftList import GiftList
+from Sources.GiftList import GiftList
 
 def initialLoad(giftList):
     with open('Giftlist/output.txt') as output_file:
