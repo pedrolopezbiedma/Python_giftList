@@ -1,5 +1,4 @@
 ### Imports ###
-from Sources.Persons import Persons
 from Sources.GiftList import GiftList
 from Sources.MenuAux import showLovelyWelcome, showMenuOptions, showLovelyGoodBye, askMenuOption, askPerson, askGift, optionNotFound
 from Sources.DocumentHandler import initialLoad
@@ -13,10 +12,10 @@ typedPerson = ''
 newGift = ''
 
 ### Main Program ###
-#initialLoad(giftList)
+initialLoad(giftList)
 
 showLovelyWelcome()
-#menuOption = '0'
+menuOption = '0'
 
 while(menuOption != '0'):
     showMenuOptions()
