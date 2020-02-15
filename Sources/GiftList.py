@@ -1,7 +1,10 @@
 class GiftList:
 
     def __init__(self):
-        self.listDict = { 'Pedro': [ 'Mando', 'Gafas' ], 'Lucia':[ 'Luci1', 'Lucia2'] }
+        self.listDict = { }
+
+    def getCompleteGiftList(self):
+        return self.listDict
 
     def personFoundInList(self, person):
         for p in self.listDict.keys():
@@ -9,14 +12,6 @@ class GiftList:
                 return True;
 
         return False;       
-
-    def addGiftToPerson(self, person, gift):
-        if(self.personFoundInList(person)):
-            giftList = list(self.listDict[person])
-            giftList.append(gift)
-            self.listDict[person] = giftList
-        else:
-            print(f'{person} is not in the list, add him/her first ;) !!!')
 
     def askToUpdatePersonList(self):
         updatePersonList = ''
@@ -29,6 +24,14 @@ class GiftList:
                 person = input('Please type the name of the new person: ')
                 self.addPersonToGiftList(person)
             self.printPersonsInGiftList()
+
+    def addGiftToPerson(self, person, gift):
+        if(self.personFoundInList(person)):
+            giftList = list(self.listDict[person])
+            giftList.append(gift)
+            self.listDict[person] = giftList
+        else:
+            print(f'{person} is not in the list, add him/her first ;) !!!')
 
     def addPersonToGiftList(self, person):
         if(self.personFoundInList(person)):
@@ -55,7 +58,7 @@ class GiftList:
     def printGiftList(self):
         print('--------------------------- Gifts List -----------------------------')
         for person in list(self.listDict.keys()):
-            print(f'| *** Presents for {person} ***')
+            print(f'| *** Presents for {person} *** ')
             for gift in list(self.listDict[person]):
                 print(f'|{gift}')
             print('|')
